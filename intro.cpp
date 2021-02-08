@@ -27,7 +27,7 @@ int main()
 
 	string full_name = first_name + ' ' + family_name;
 
-//	cout << full_name << '\n';
+	cout << full_name << '\n';
 
 	return 0;
 }
