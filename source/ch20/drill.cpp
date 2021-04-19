@@ -1,6 +1,6 @@
 #include "../std_lib_facilities.h"
 
-int array1[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+array<int, 10> array1{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 vector<int> vector1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 list<int> list1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -14,7 +14,7 @@ void increase(data& DATA, int n)
 }
 
 template<typename Iter1, typename Iter2>
-Iter2 copy(Iter1 begin1, Iter1 end1, Iter2 begin2)
+Iter2 my_copy(Iter1 begin1, Iter1 end1, Iter2 begin2)
 {
 	while (begin1 != end1)
 	{
@@ -28,7 +28,7 @@ Iter2 copy(Iter1 begin1, Iter1 end1, Iter2 begin2)
 
 int main()
 {
-	int array2[10];
+	array<int, 10> array2;
 	for (int i = 0; i < 10; ++i)
 	{
 		array2[i] = array1[i];
@@ -40,8 +40,8 @@ int main()
 	increase(vector1, 3);
 	increase(list1, 5);
 
-	//copy(array2.begin(), array2.end(), vector2.begin());
-	//copy(list2.begin(), list2.end(), array2.begin());
+	my_copy(array2.begin(), array2.end(), vector2.begin());
+	my_copy(list2.begin(), list2.end(), array2.begin());
 
 	vector<int>::iterator vecIterator;
 	vecIterator = find(vector1.begin(), vector1.end(), 3);
