@@ -23,7 +23,7 @@ void fillVectorFromFile(string filename, vector<Item> &itemVector)
 	ifstream sr {filename};
 	if (!sr)
 	{
-		error("Can't open output file ", filename);
+		error("Can't open input file ", filename);
 	}
 
 	while(true)
